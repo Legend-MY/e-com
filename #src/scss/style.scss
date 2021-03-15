@@ -2,16 +2,22 @@
 @import "mixins";
 // Подключение шрифтов =============================================================================
 @import "fonts";
+@import url(https://fonts.googleapis.com/css?family=Poppins:regular,500,600,700);
 // Подключение файла обнуления стилей ==============================================================
 @import "nullstyle";
 // Переменные ======================================================================================
+$main-black: #262626;
+$main-blue: #40bfff;
+$main-red: #ff4858;
+$secondary-blue: #bcddfe;
+
 $minWidth: 320px;
 $maxWidth: 1500;
-$maxWidthContainer: 1210;
+$maxWidthContainer: 1300;
 $md1: $maxWidthContainer + 12;
-$md2: 991.98;
-$md3: 767.98;
-$md2: 479.98;
+$md2: 991.98px;
+$md3: 767.98px;
+$md4: 479.98px;
 
 // Основная сетка ==================================================================================
 ._container {
@@ -22,7 +28,9 @@ $md2: 479.98;
 
 // Основной шрифт ==================================================================================
 body {
-   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+   font-family: "Poppins", sans-serif;
+   font-size: 14px;
+   color: $main-black;
 }
 
 // Общие стили =====================================================================================
@@ -41,3 +49,4 @@ body {
 @import "blocks/header";
 
 @import "blocks/footer";
+@import "popups";

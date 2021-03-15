@@ -1,0 +1,108 @@
+.search {
+   width: 100%;
+   height: 100%;
+   position: fixed;
+   left: 0;
+   top: 0;
+   background-color: rgba(0, 0, 0, 0.4);
+   opacity: 0;
+   visibility: hidden;
+   transition: all 0.3s ease;
+   &.active {
+      opacity: 1;
+      visibility: visible;
+   }
+   // .search__area
+   &__area {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      cursor: pointer;
+   }
+
+   // .search__body
+   &__body {
+      min-height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+   }
+
+   // .search__content
+   &__content {
+      width: 100%;
+      padding: 30px;
+      border-radius: 10px;
+      background-color: #fff;
+      position: relative;
+      z-index: 2;
+      transform: perspective(600px) translate(0px, -100%) rotateX(45deg);
+      transition: all 0.3s ease;
+      &.active {
+         transform: perspective(600px) translate(0px, 0px) rotateX(0deg);
+      }
+   }
+
+   // .search__close
+   &__close {
+      width: 15px;
+      height: 15px;
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      cursor: pointer;
+      img {
+         max-width: 100%;
+      }
+   }
+
+   // .search__title
+   &__title {
+      font-family: "proximanova";
+      font-size: 36px;
+      line-height: 42px;
+      margin: 0px 0px 40px 0px;
+      @media (max-width: $md3) {
+         font-size: 24px;
+         line-height: 32px;
+         margin: 0px 0px 20px 0px;
+      }
+   }
+
+   // .search__form
+   &__form {
+      display: flex;
+      align-items: center;
+      position: relative;
+   }
+
+   // .search__input
+   &__input {
+      width: 100%;
+      font-size: 18px;
+      border-bottom: 2px solid $main-black;
+      padding: 0 10px;
+      &::placeholder {
+         font-size: 14px;
+         color: rgba($color: $main-black, $alpha: 0.4);
+      }
+      @media (max-width: $md3) {
+         font-size: 16px;
+      }
+   }
+
+   // .search__btn
+   &__btn {
+      position: absolute;
+      right: 0;
+      top: 0;
+      font-size: 0;
+      width: 24px;
+      height: 24px;
+      background: url("../img/header/search-icon.svg") no-repeat center / cover;
+      cursor: pointer;
+   }
+}
