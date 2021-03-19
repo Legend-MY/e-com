@@ -13,8 +13,8 @@ $secondary-blue: #bcddfe;
 
 $minWidth: 320px;
 $maxWidth: 1500;
-$maxWidthContainer: 1300;
-$md1: $maxWidthContainer + 12;
+$maxWidthContainer: 1270;
+$md1: $maxWidthContainer + 12 + px;
 $md2: 991.98px;
 $md3: 767.98px;
 $md4: 479.98px;
@@ -23,7 +23,16 @@ $md4: 479.98px;
 ._container {
    max-width: $maxWidthContainer + px;
    margin: 0 auto;
-   padding: 0 15px;
+   @media (max-width: $md1) {
+      max-width: 970px;
+   }
+   @media (max-width: $md2) {
+      max-width: 750px;
+   }
+   @media (max-width: $md3) {
+      max-width: none;
+      padding: 0 10px;
+   }
 }
 
 // Основной шрифт ==================================================================================

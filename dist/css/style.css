@@ -111,9 +111,8 @@ h6 {
 /*--------------------*/
 
 ._container {
-  max-width: 1300px;
+  max-width: 1270px;
   margin: 0 auto;
-  padding: 0 15px;
 }
 
 body {
@@ -685,7 +684,21 @@ body._touch .menu__arrow {
   }
 }
 
+@media (max-width: 1282px) {
+  ._container {
+    max-width: 970px;
+  }
+
+  .menu__list > li {
+    margin: 0px 50px 0px 0px;
+  }
+}
+
 @media (max-width: 991.98px) {
+  ._container {
+    max-width: 750px;
+  }
+
   .header {
     min-height: 110px;
     padding: 15px 0;
@@ -833,6 +846,11 @@ body._touch .menu__arrow {
 }
 
 @media (max-width: 767.98px) {
+  ._container {
+    max-width: none;
+    padding: 0 10px;
+  }
+
   .search__title {
     font-size: 24px;
     line-height: 32px;
