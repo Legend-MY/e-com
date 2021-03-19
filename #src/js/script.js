@@ -1,9 +1,10 @@
 'use strict';
-/* ==========================================Проверка поддерживает ли браузер webP ==========================================*/
+/* ==========================================Проверка поддерживает ли браузер webP ===============*/
 @@include('webpcheck.js');
-/* ==========================================================================================================================*/
+@@include('mobilecheck.js');
+/* ===============================================================================================*/
 
-// Селекторы языка и валюты =====================================================================================
+// Селекторы языка и валюты ========================================================================
 let selectorBtn = document.querySelectorAll('.selector__item');
 function chooseSelector() {
    for (let i = 0; i < selectorBtn.length; i++) {
@@ -18,7 +19,7 @@ function chooseSelector() {
 }
 chooseSelector();
 
-// Попап поиска =====================================================================================
+// Попап поиска ====================================================================================
 let searchIcon = document.querySelector('.header__search'),
    searchPopup = document.querySelector('.search'),
    searchArea = document.querySelector('.search__area'),
@@ -39,3 +40,15 @@ searchClose.addEventListener('click', function (event) {
    searchPopup.classList.remove('active');
    searchContent.classList.remove('active');
 });
+
+// Меню бургер ====================================================================================
+const burgerBtn = document.querySelector('.menu__burger'),
+   menuBody = document.querySelector('.menu__body');
+
+if (burgerBtn) {
+   burgerBtn.addEventListener('click', function (event) {
+      document.body.classList.toggle('lock');
+      burgerBtn.classList.toggle('active');
+      menuBody.classList.toggle('active');
+   });
+}
