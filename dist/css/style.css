@@ -110,7 +110,7 @@ h6 {
 
 /*--------------------*/
 
-._container {
+.container {
   max-width: 1270px;
   margin: 0 auto;
 }
@@ -145,17 +145,16 @@ body {
   left: 0;
   width: 100%;
   z-index: 10;
-  padding: 25px 0;
-  min-height: 175px;
+  padding: 26px 0;
+  min-height: 165px;
   background-color: #fff;
 }
 
 .header__top {
   position: relative;
-  z-index: 6;
   border-bottom: 2px solid #fafafb;
-  padding: 0px 0px 20px 0px;
-  margin: 0px 0px 30px 0px;
+  padding: 0px 0px 14px 0px;
+  margin: 0px 0px 26px 0px;
 }
 
 .header__top-body {
@@ -205,6 +204,12 @@ body {
 
 .header__profile span {
   margin: 0px 0px 0px 5px;
+}
+
+.header__profile svg {
+  display: block;
+  width: 20px;
+  height: 20px;
 }
 
 .header__profile svg path {
@@ -285,7 +290,6 @@ body {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 135px;
           flex: 0 0 135px;
-  margin: 0px 20px 0px 0px;
   position: relative;
   z-index: 5;
 }
@@ -364,12 +368,28 @@ body {
   display: none;
 }
 
-.menu__list > li {
-  margin: 0px 95px 0px 0px;
+.menu__body {
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-.menu__list > li:last-child {
-  margin: 0;
+.menu__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.menu__list > li {
+  margin: 0px 0px 0px 97px;
+}
+
+.menu__list > li > span {
+  cursor: pointer;
 }
 
 .menu__link {
@@ -378,129 +398,85 @@ body {
   font-weight: 500;
   color: #262626;
   text-transform: uppercase;
-  -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-
-.menu__arrow {
-  display: none;
+  -webkit-transition: color 0.3s ease;
+  -o-transition: color 0.3s ease;
+  transition: color 0.3s ease;
 }
 
 .menu__dropdown {
   position: absolute;
-  left: -100px;
+  left: -18%;
   top: 100%;
-  width: 100%;
-  background: #ffecec;
-  border-top: 2px solid #c1c8ce;
-  border-radius: 0 0 10px 10px;
-  padding: 30px 30px 15px 30px;
+  width: 1030px;
+  border-top: 2px solid #f1f3f4;
+  border-radius: 0px 0px 10px 10px;
+  background-color: #fff;
+  padding: 40px 0px 15px 95px;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .menu__dropdown-row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
 }
 
-.menu__dropdown-column {
-  margin: 0px 0px 15px 0px;
+.menu__dropdown-list {
+  max-width: 290px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0px 30px 0px 0px;
+}
+
+.menu__dropdown-list:last-child {
+  margin: 0;
+}
+
+.menu__dropdown-list > li {
+  display: block;
+  width: 50%;
+  margin: 0px 0px 25px 0px;
 }
 
 .menu__dropdown-title {
   font-size: 22px;
   line-height: 33px;
   font-weight: 500;
+  width: 100% !important;
+}
+
+.menu__dropdown-title a {
   color: #c1c8ce;
-  margin: 0px 0px 12px 0px;
-}
-
-.menu__dropdown-categories {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.menu__dropdown-subcolumn {
-  margin: 0px 30px 0px 0px;
-}
-
-.menu__dropdown-subcolumn:last-child {
-  margin: 0;
-}
-
-.menu__dropdown-subcolumn > li {
-  margin: 0px 0px 20px 0px;
-}
-
-.menu__dropdown-subcolumn > li:last-child {
-  margin: 0;
 }
 
 .menu__dropdown-link {
-  display: inline-block;
   font-size: 16px;
   line-height: 24px;
   color: #262626;
-  max-width: 150px;
 }
 
 body.lock {
   overflow: hidden;
 }
 
-body._pc .menu__list > li:hover .menu__dropdown {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: all;
-}
-
-body._touch .menu__list > li {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-body._touch .menu__list > li.active .menu__dropdown {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: all;
-}
-
-body._touch .menu__list > li.active .menu__arrow {
-  -webkit-transform: rotate(-180deg);
-      -ms-transform: rotate(-180deg);
-          transform: rotate(-180deg);
-}
-
-body._touch .menu__link {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
-}
-
-body._touch .menu__arrow {
+body.touch .menu__dropdown.active {
   display: block;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-top: 5px solid #262626;
-  width: 0;
-  height: 0;
-  margin: 0px 0px 0px 5px;
-  -webkit-transition: -webkit-transform 0.3s ease;
-  transition: -webkit-transform 0.3s ease;
-  -o-transition: transform 0.3s ease;
-  transition: transform 0.3s ease;
-  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
 }
 
 .search {
@@ -659,24 +635,14 @@ body._touch .menu__arrow {
     color: #40bfff;
   }
 
-  .menu__list {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    position: relative;
+  .menu__list > li:hover .menu__dropdown {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
   }
 
   .menu__link:hover {
     color: #40bfff;
-  }
-
-  .menu__dropdown {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    -webkit-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease;
   }
 
   .menu__dropdown-link:hover {
@@ -685,29 +651,34 @@ body._touch .menu__arrow {
 }
 
 @media (max-width: 1282px) {
-  ._container {
+  .container {
     max-width: 970px;
   }
 
   .menu__list > li {
-    margin: 0px 50px 0px 0px;
+    margin: 0px 0px 0px 80px;
+  }
+
+  .menu__dropdown {
+    width: 100%;
+    left: 0;
   }
 }
 
 @media (max-width: 991.98px) {
-  ._container {
+  .container {
     max-width: 750px;
   }
 
   .header {
-    min-height: 110px;
-    padding: 15px 0;
+    min-height: 105px;
+    padding: 10px 0;
   }
 
   .header__top {
-    padding: 0px 0px 10px 0px;
-    margin: 0;
     border: none;
+    padding: 0px 0px 14px 0px;
+    margin: 0;
   }
 
   .menu__burger {
@@ -777,16 +748,13 @@ body._touch .menu__arrow {
 
   .menu__body {
     position: fixed;
-    top: 0;
     left: -100%;
+    top: 0;
     width: 100%;
     height: 100%;
-    background-color: #cbfffa;
-    padding: 130px 15px 30px 15px;
+    background-color: #bcddfe;
+    padding: 120px 0px 0px 10px;
     overflow: auto;
-    -webkit-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease;
   }
 
   .menu__body::before {
@@ -795,24 +763,22 @@ body._touch .menu__arrow {
     left: 0;
     top: 0;
     width: 100%;
-    height: 110px;
+    height: 105px;
     background-color: #fff;
-    z-index: 2;
+    z-index: 6;
   }
 
   .menu__body.active {
     left: 0;
   }
 
-  .menu__list > li {
-    margin: 0;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    margin: 0px 0px 20px 0px;
+  .menu__list {
+    display: block;
+    overflow: auto;
   }
 
-  .menu__list > li.active .menu__dropdown {
-    display: block;
+  .menu__list > li {
+    margin: 0px 0px 20px 0px;
   }
 
   .menu__link {
@@ -820,33 +786,33 @@ body._touch .menu__arrow {
   }
 
   .menu__dropdown {
+    display: none;
     position: relative;
     left: 0;
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 100%;
-            flex: 1 1 100%;
-    background-color: #fff;
+    width: 100%;
+    padding: 20px 20px 1px 20px;
     border-radius: 0;
-    padding: 10px 0px 0px 20px;
-    margin: 0px 0px 20px 0px;
-    display: none;
+    margin: 0px 0px 15px 0px;
   }
 
   .menu__dropdown-row {
     display: block;
   }
 
-  .menu__dropdown-categories {
+  .menu__dropdown-list {
     display: block;
+    max-width: none;
+    margin: 0;
   }
 
-  .menu__dropdown-subcolumn {
-    margin: 0px 0px 20px 0px;
+  .menu__dropdown-list > li {
+    width: 100%;
+    margin: 0px 0px 10px 0px;
   }
 }
 
 @media (max-width: 767.98px) {
-  ._container {
+  .container {
     max-width: none;
     padding: 0 10px;
   }

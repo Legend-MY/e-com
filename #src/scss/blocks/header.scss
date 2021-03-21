@@ -4,25 +4,24 @@
    left: 0;
    width: 100%;
    z-index: 10;
-   padding: 25px 0;
-   min-height: 175px;
+   padding: 26px 0;
+   min-height: 165px;
    background-color: #fff;
    @media (max-width: $md2) {
-      min-height: 110px;
-      padding: 15px 0;
+      min-height: 105px;
+      padding: 10px 0;
    }
 
    // .header__top
    &__top {
       position: relative;
-      z-index: 6;
       border-bottom: 2px solid #fafafb;
-      padding: 0px 0px 20px 0px;
-      margin: 0px 0px 30px 0px;
+      padding: 0px 0px 14px 0px;
+      margin: 0px 0px 26px 0px;
       @media (max-width: $md2) {
-         padding: 0px 0px 10px 0px;
-         margin: 0;
          border: none;
+         padding: 0px 0px 14px 0px;
+         margin: 0;
       }
    }
 
@@ -61,6 +60,9 @@
          margin: 0px 0px 0px 5px;
       }
       svg {
+         display: block;
+         width: 20px;
+         height: 20px;
          path {
             transition: all 0.3s ease;
          }
@@ -171,7 +173,6 @@
    // .header__logo
    &__logo {
       flex: 0 0 135px;
-      margin: 0px 20px 0px 0px;
       position: relative;
       z-index: 5;
       img {
@@ -304,25 +305,25 @@
 
    // .menu__body
    &__body {
+      transition: all 0.3s ease;
       @media (max-width: $md2) {
          position: fixed;
-         top: 0;
          left: -100%;
+         top: 0;
          width: 100%;
          height: 100%;
-         background-color: rgba(203, 255, 250, 1);
-         padding: 130px 15px 30px 15px;
+         background-color: $secondary-blue;
+         padding: 120px 0px 0px 10px;
          overflow: auto;
-         transition: all 0.3s ease;
          &::before {
             content: "";
             position: fixed;
             left: 0;
             top: 0;
             width: 100%;
-            height: 110px;
+            height: 105px;
             background-color: #fff;
-            z-index: 2;
+            z-index: 6;
          }
          &.active {
             left: 0;
@@ -332,31 +333,34 @@
 
    // .menu__list
    &__list {
+      display: flex;
+      align-items: center;
+      position: relative;
       > li {
-         margin: 0px 95px 0px 0px;
-         &:last-child {
-            margin: 0;
+         margin: 0px 0px 0px 97px;
+         > span {
+            cursor: pointer;
+         }
+      }
+      @media (min-width: $md2) {
+         > li:hover {
+            .menu__dropdown {
+               opacity: 1;
+               visibility: visible;
+               pointer-events: all;
+            }
          }
       }
       @media (max-width: $md1) {
          > li {
-            margin: 0px 50px 0px 0px;
+            margin: 0px 0px 0px 80px;
          }
       }
-      @media (min-width: $md2) {
-         display: flex;
-         position: relative;
-      }
       @media (max-width: $md2) {
+         display: block;
+         overflow: auto;
          > li {
-            margin: 0;
-            flex-wrap: wrap;
             margin: 0px 0px 20px 0px;
-            &.active {
-               .menu__dropdown {
-                  display: block;
-               }
-            }
          }
       }
    }
@@ -368,7 +372,7 @@
       font-weight: 500;
       color: $main-black;
       text-transform: uppercase;
-      transition: all 0.3s ease;
+      transition: color 0.3s ease;
       @media (min-width: $md2) {
          &:hover {
             color: $main-blue;
@@ -379,52 +383,68 @@
       }
    }
 
-   // .menu__arrow
-   &__arrow {
-      display: none;
-   }
-
    // .menu__dropdown
    &__dropdown {
       position: absolute;
-      left: -100px;
+      left: -18%;
       top: 100%;
-      width: 100%;
-      background: #ffecec;
-      border-top: 2px solid #c1c8ce;
-      border-radius: 0 0 10px 10px;
-      padding: 30px 30px 15px 30px;
-      @media (min-width: $md2) {
-         opacity: 0;
-         visibility: hidden;
-         pointer-events: none;
-         transition: all 0.3s ease;
+      width: 1030px;
+      border-top: 2px solid #f1f3f4;
+      border-radius: 0px 0px 10px 10px;
+      background-color: #fff;
+      padding: 40px 0px 15px 95px;
+      transition: all 0.3s ease;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      @media (max-width: $md1) {
+         width: 100%;
+         left: 0;
       }
       @media (max-width: $md2) {
+         display: none;
          position: relative;
          left: 0;
-         flex: 1 1 100%;
-         background-color: #fff;
+         width: 100%;
+         padding: 20px 20px 1px 20px;
          border-radius: 0;
-         padding: 10px 0px 0px 20px;
-         margin: 0px 0px 20px 0px;
-         display: none;
+         margin: 0px 0px 15px 0px;
       }
    }
 
    // .menu__dropdown-row
    &__dropdown-row {
       display: flex;
+      align-items: flex-start;
       flex-wrap: wrap;
-      justify-content: space-between;
       @media (max-width: $md2) {
          display: block;
       }
    }
 
-   // .menu__dropdown-column
-   &__dropdown-column {
-      margin: 0px 0px 15px 0px;
+   // .menu__dropdown-list
+   &__dropdown-list {
+      max-width: 290px;
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0px 30px 0px 0px;
+      &:last-child {
+         margin: 0;
+      }
+      > li {
+         display: block;
+         width: 50%;
+         margin: 0px 0px 25px 0px;
+      }
+      @media (max-width: $md2) {
+         display: block;
+         max-width: none;
+         margin: 0;
+         > li {
+            width: 100%;
+            margin: 0px 0px 10px 0px;
+         }
+      }
    }
 
    // .menu__dropdown-title
@@ -432,42 +452,17 @@
       font-size: 22px;
       line-height: 33px;
       font-weight: 500;
-      color: #c1c8ce;
-      margin: 0px 0px 12px 0px;
-   }
-
-   // .menu__dropdown-categories
-   &__dropdown-categories {
-      display: flex;
-      @media (max-width: $md2) {
-         display: block;
-      }
-   }
-
-   // menu__dropdown-subcolumn
-   &__dropdown-subcolumn {
-      margin: 0px 30px 0px 0px;
-      &:last-child {
-         margin: 0;
-      }
-      > li {
-         margin: 0px 0px 20px 0px;
-         &:last-child {
-            margin: 0;
-         }
-      }
-      @media (max-width: $md2) {
-         margin: 0px 0px 20px 0px;
+      width: 100% !important;
+      a {
+         color: #c1c8ce;
       }
    }
 
    // .menu__dropdown-link
    &__dropdown-link {
-      display: inline-block;
       font-size: 16px;
       line-height: 24px;
       color: $main-black;
-      max-width: 150px;
       @media (min-width: $md2) {
          &:hover {
             text-decoration: underline;
