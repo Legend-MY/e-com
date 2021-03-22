@@ -5,6 +5,9 @@
 @import url(https://fonts.googleapis.com/css?family=Poppins:regular,500,600,700);
 // Подключение файла обнуления стилей ==============================================================
 @import "nullstyle";
+// Swiper Slider ===================================================================================
+@import "swiper-vars.scss";
+@import "swiper.scss";
 // Переменные ======================================================================================
 $main-black: #262626;
 $main-blue: #40bfff;
@@ -54,7 +57,7 @@ body {
    }
 }
 
-// Подключение файлов стилей страниц ====================================================================================================
+// Подключение файлов стилей страниц ===============================================================
 @import "blocks/header";
 
 body {
@@ -73,5 +76,52 @@ body {
    }
 }
 
+/* main-banner */
+.main-banner {
+   height: 650px;
+   padding: 165px 0px 0px 0px;
+   @media (max-width: $md2) {
+      height: 450px;
+      padding: 105px 0px 0px 0px;
+   }
+   @media (max-width: $md3) {
+      height: 350px;
+   }
+   @media (max-width: $md4) {
+      height: 300px;
+   }
+   // .main-banner__slider
+   &__slider {
+      height: 100%;
+   }
+
+   // .main-banner__wrapper
+   &__wrapper {
+   }
+
+   // .main-banner__slide
+   &__slide {
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+   }
+   // .main-banner__content
+   &__content {
+      display: block;
+      height: 100%;
+      display: flex;
+      align-items: center;
+   }
+
+   // .main-banner__title
+   &__title {
+      @include adaptive-font(64, 24);
+      line-height: 150%;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 0.5px;
+   }
+}
+/* ====================================== */
 @import "blocks/footer";
 @import "popups";

@@ -1,3 +1,4 @@
+// Автоматическое подключение шрифтов
 @mixin font($font_name, $file_name, $weight, $style) {
   @font-face {
     font-family: $font_name;
@@ -6,4 +7,12 @@
     font-weight: #{$weight};
     font-style: #{$style};
   }
+}
+
+// Адаптивный размер шрифта
+$maxWidth: 1500;
+@mixin adaptive-font($pcSize, $mobSize) {
+  $addSize: $pcSize - $mobSize;
+  $maxWidth: $maxWidth - 320;
+  font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
 }

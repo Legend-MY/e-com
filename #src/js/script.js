@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
    @@include('webpcheck.js'); // Проверка поддерживает ли браузер webP
    @@include('mobilecheck.js'); // Определение с какого устройства зашел пользователь
+   @@include('swiper-bundle.min.js'); // Swiper slider
 
 
    /* Селекторы языка и валюты */
@@ -69,6 +70,17 @@ document.addEventListener('DOMContentLoaded', function () {
          menuBody.classList.toggle('active');
       });
    }
+   /* ======================================== */
+
+
+   /* Swiper slider */
+   new Swiper('.main-banner__slider', {
+      loop: true,
+      speed: 1000,
+      autoplay: {
+         delay: 5000
+      }
+   });
    /* ======================================== */
 
 
