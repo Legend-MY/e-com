@@ -18,21 +18,21 @@ $minWidth: 320px;
 $maxWidth: 1500;
 $maxWidthContainer: 1270;
 $md1: $maxWidthContainer + 12 + px;
-$md2: 991.98px;
-$md3: 767.98px;
-$md4: 479.98px;
+$md2: 991.98;
+$md3: 767.98;
+$md4: 479.98;
 
 // Основная сетка ==================================================================================
 .container {
    max-width: $maxWidthContainer + px;
    margin: 0 auto;
-   @media (max-width: $md1) {
+   @media (max-width: $md1 + px) {
       max-width: 970px;
    }
-   @media (max-width: $md2) {
+   @media (max-width: $md2 + px) {
       max-width: 750px;
    }
-   @media (max-width: $md3) {
+   @media (max-width: $md3 + px) {
       max-width: none;
       padding: 0 10px;
    }
@@ -64,64 +64,6 @@ body {
    &.lock {
       overflow: hidden;
    }
-   &.touch {
-      .menu__dropdown {
-         &.active {
-            display: block;
-            opacity: 1;
-            visibility: visible;
-            pointer-events: all;
-         }
-      }
-   }
-}
-
-/* main-banner */
-.main-banner {
-   height: 650px;
-   padding: 165px 0px 0px 0px;
-   @media (max-width: $md2) {
-      height: 450px;
-      padding: 105px 0px 0px 0px;
-   }
-   @media (max-width: $md3) {
-      height: 350px;
-   }
-   @media (max-width: $md4) {
-      height: 300px;
-   }
-   // .main-banner__slider
-   &__slider {
-      height: 100%;
-   }
-
-   // .main-banner__wrapper
-   &__wrapper {
-   }
-
-   // .main-banner__slide
-   &__slide {
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
-   }
-   // .main-banner__content
-   &__content {
-      display: block;
-      height: 100%;
-      display: flex;
-      align-items: center;
-   }
-
-   // .main-banner__title
-   &__title {
-      @include adaptive-font(64, 24);
-      line-height: 150%;
-      font-weight: 700;
-      color: #fff;
-      letter-spacing: 0.5px;
-   }
 }
 /* ====================================== */
 @import "blocks/footer";
-@import "popups";
