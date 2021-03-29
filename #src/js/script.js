@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
    /* ===================================== */
 
 
-   // Header selectors ====================================
+   /* Header selectors */
    (function () {
       const selectorsBlock = document.querySelectorAll('.selectors__block');
 
@@ -29,10 +29,10 @@ document.addEventListener('DOMContentLoaded', function () {
          });
       });
    })();
-   // ========================================================================
+   /* ===================================== */
 
 
-   // Меню бургер ====================================
+   /* Menu burger */
    (function () {
       const burgerBtn = document.querySelector('.menu__burger'),
          menuBody = document.querySelector('.menu__body'),
@@ -46,8 +46,22 @@ document.addEventListener('DOMContentLoaded', function () {
          });
       }
    })();
-   // ========================================================================
+   /* ===================================== */
 
 
+   /* main banner slider */
+   new Swiper('.main-slider', {
+      loop: true,
+      autoplay: {
+         // Пауза между прокруткой
+         delay: 5000,
+         // Закончить на последнем слайде
+         stopOnLastSlide: false,
+         // Отключить после ручного переключения
+         disableOnInteraction: false
+      },
+      speed: 800,
+   });
+   /* ===================================== */
 });
 

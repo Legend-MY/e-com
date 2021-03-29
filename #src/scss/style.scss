@@ -125,6 +125,53 @@ body {
       }
    }
 }
+
+.main-slider {
+   padding: 165px 0px 0px 0px;
+   @media (max-width: $md2 + px) {
+      padding: 120px 0px 0px 0px;
+   }
+   // .main-slider__container
+   &__container {
+   }
+
+   // .main-slider__wrapper
+   &__wrapper {
+   }
+
+   // .main-slider__slide
+   &__slide {
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 650px;
+      @media (max-width: $md1 + px) {
+         height: 500px;
+      }
+      @media (max-width: $md2 + px) {
+         height: 400px;
+      }
+      @media (max-width: $md3 + px) {
+         height: 300px;
+      }
+   }
+
+   // .main-slider__content
+   &__content {
+      min-height: 100%;
+      padding: 20px 0;
+      display: flex;
+      align-items: center;
+      .main-slider__text {
+         @include adaptive-font(64, 28);
+         line-height: 150%;
+         font-weight: 700;
+         letter-spacing: 0.5px;
+         color: #fff;
+      }
+   }
+}
+
 /* ====================================== */
 @import "blocks/footer";
 @import "popups";

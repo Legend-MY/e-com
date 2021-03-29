@@ -351,6 +351,8 @@ body {
   width: 100%;
   min-height: 165px;
   padding: 26px 0;
+  background-color: #fff;
+  z-index: 10;
 }
 
 .header__top {
@@ -741,6 +743,36 @@ body.touch .menu__link.arrow::after {
           transform: translateY(-50%);
 }
 
+.main-slider {
+  padding: 165px 0px 0px 0px;
+}
+
+.main-slider__slide {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 650px;
+}
+
+.main-slider__content {
+  min-height: 100%;
+  padding: 20px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main-slider__content .main-slider__text {
+  font-size: calc(28px + 36 * ((100vw - 320px) / 1180));
+  line-height: 150%;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #fff;
+}
+
 /* ====================================== */
 
 .popup {
@@ -750,13 +782,14 @@ body.touch .menu__link.arrow::after {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+  -webkit-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
   opacity: 0;
   visibility: hidden;
   overflow-y: auto;
   overflow-x: hidden;
-  -webkit-transition: all 0.4s ease 0s;
-  -o-transition: all 0.4s ease 0s;
-  transition: all 0.4s ease 0s;
 }
 
 .popup.open {
@@ -920,6 +953,10 @@ body.touch .menu__link.arrow::after {
   .menu__dropdown {
     width: auto;
   }
+
+  .main-slider__slide {
+    height: 500px;
+  }
 }
 
 @media (max-width: 991.98px) {
@@ -1021,7 +1058,7 @@ body.touch .menu__link.arrow::after {
     width: 100%;
     height: 120px;
     background-color: #fff;
-    z-index: 2;
+    z-index: 3;
   }
 
   .menu__body.active {
@@ -1072,6 +1109,14 @@ body.touch .menu__link.arrow::after {
             flex: 0 0 100%;
     margin: 0px 0px 20px 0px;
   }
+
+  .main-slider {
+    padding: 120px 0px 0px 0px;
+  }
+
+  .main-slider__slide {
+    height: 400px;
+  }
 }
 
 @media (max-width: 767.98px) {
@@ -1082,6 +1127,10 @@ body.touch .menu__link.arrow::after {
 
   .menu__body {
     padding: 140px 10px 30px 10px;
+  }
+
+  .main-slider__slide {
+    height: 300px;
   }
 }
 
