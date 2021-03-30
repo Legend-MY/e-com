@@ -431,13 +431,13 @@
    // .menu__dropdown
    &__dropdown {
       position: absolute;
-      left: -20%;
+      left: -30%;
       top: 100%;
       width: 1030px;
       border-top: 3px solid #f1f3f4;
-      border-radius: 0px 0px 10px 10px;
+      border-radius: 0px 0px 5px 5px;
       background-color: #fff;
-      padding: 30px 20px 20px 20px;
+      padding: 30px 20px 20px 50px;
       transition: all 0.3s ease 0s;
       opacity: 0;
       visibility: hidden;

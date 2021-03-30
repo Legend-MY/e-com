@@ -63,5 +63,24 @@ document.addEventListener('DOMContentLoaded', function () {
       speed: 800,
    });
    /* ===================================== */
+
+   /* Обрезать символы в описании товара по длинне */
+   (function () {
+
+      const cropElement = document.querySelectorAll('.item-product__description'),
+         size = 210,
+         endCharacter = '...';
+
+      cropElement.forEach(el => {
+         let text = el.innerHTML;
+
+         if (el.innerHTML.length > size) {
+            text = text.substr(0, size);
+            el.innerHTML = text + endCharacter;
+         }
+      });
+
+   }());
+   /* ===================================== */
 });
 
