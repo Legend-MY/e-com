@@ -37,5 +37,5 @@ const tabs = (headerSelector, tabSelector, contentSelector, activeClass) => {
   });
 };
 
-tabs('.tabs__btns', '.tabs__btn', '.tabs__item', 'active');
+tabs('.best-seller__tabs', '.best-seller__tab', '.best-seller__content', 'active');
 /*=================================================================================*/
