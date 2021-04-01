@@ -267,23 +267,31 @@ testWebP(function (support) {
    /* ===================================== */
 
    /* Фильтрация best-seller */
-   const filterCards = document.querySelectorAll('.best-seller__column'),
-      filterTabs = document.querySelector('.best-seller__tabs');
+   (function () {
+      const filterTabs = document.querySelector('.best-seller__tabs'),
+         filterTab = document.querySelectorAll('.best-seller__tab'),
+         filterCards = document.querySelectorAll('.best-seller__column');
 
-   filterTabs.addEventListener('click', (event) => {
-      const target = event.target;
-      if (!target.classList.contains('best-seller__tab')) {
-         return false;
-      }
+      filterTabs.addEventListener('click', (event) => {
+         const target = event.target;
+         if (!target.classList.contains('best-seller__tab')) {
+            return false;
+         } else {
+            let filterClass = target.dataset['category'];
+            filterCards.forEach((elem) => {
+               elem.classList.remove('hide');
+               if (!elem.classList.contains(filterClass) && filterClass !== 'All') {
+                  elem.classList.add('hide');
+               }
+            });
 
-      let filterClass = target.dataset['category'];
-      filterCards.forEach((elem) => {
-         elem.classList.remove('hide');
-         if (!elem.classList.contains(filterClass) && filterClass !== 'All') {
-            elem.classList.add('hide');
+            filterTab.forEach((elem) => {
+               elem.classList.remove('active');
+               target.classList.add('active');
+            });
          }
       });
-   });
+   })();
 
    /* ===================================== */
 });
