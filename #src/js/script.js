@@ -82,5 +82,26 @@ document.addEventListener('DOMContentLoaded', function () {
 
    }());
    /* ===================================== */
+
+   /* Фильтрация best-seller */
+   const filterCards = document.querySelectorAll('.best-seller__column'),
+      filterTabs = document.querySelector('.best-seller__tabs');
+
+   filterTabs.addEventListener('click', (event) => {
+      const target = event.target;
+      if (!target.classList.contains('best-seller__tab')) {
+         return false;
+      }
+
+      let filterClass = target.dataset['category'];
+      filterCards.forEach((elem) => {
+         elem.classList.remove('hide');
+         if (!elem.classList.contains(filterClass) && filterClass !== 'All') {
+            elem.classList.add('hide');
+         }
+      });
+   });
+
+   /* ===================================== */
 });
 

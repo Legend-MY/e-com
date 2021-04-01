@@ -1321,6 +1321,10 @@ body.touch .menu__link.arrow::after {
   visibility: visible;
 }
 
+.best-seller .hide {
+  display: none;
+}
+
 /* ============================================================================================ */
 
 .popup {
