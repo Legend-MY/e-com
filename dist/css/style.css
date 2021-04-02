@@ -357,6 +357,17 @@ body {
   padding: 26px 0;
   background-color: #fff;
   z-index: 10;
+  -webkit-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+}
+
+.header.hide {
+  top: -120%;
+}
+
+.header.hide .menu__body::before {
+  top: -120%;
 }
 
 .header__top {
@@ -1776,6 +1787,9 @@ body.touch .menu__link.arrow::after {
     height: 120px;
     background-color: #fff;
     z-index: 3;
+    -webkit-transition: all 0.5s ease 0s;
+    -o-transition: all 0.5s ease 0s;
+    transition: all 0.5s ease 0s;
   }
 
   .menu__body.active {

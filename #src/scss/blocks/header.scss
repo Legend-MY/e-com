@@ -7,6 +7,15 @@
    padding: 26px 0;
    background-color: #fff;
    z-index: 10;
+   transition: all 0.5s ease 0s;
+   &.hide {
+      top: -120%;
+      .menu__body {
+         &::before {
+            top: -120%;
+         }
+      }
+   }
    @media (max-width: $md2 + px) {
       min-height: 120px;
       padding: 15px 0;
@@ -366,6 +375,7 @@
             height: 120px;
             background-color: #fff;
             z-index: 3;
+            transition: all 0.5s ease 0s;
          }
          &.active {
             left: 0;

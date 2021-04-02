@@ -197,6 +197,23 @@ testWebP(function (support) {
 })();;
    /* ===================================== */
 
+   /* Скрыть header при скролле */
+   (function () {
+      const header = document.querySelector('.header');
+      let previousScroll = 0;
+      window.addEventListener('scroll', function (event) {
+         let scroll = window.pageYOffset;
+         console.log(scroll);
+         if (scroll > previousScroll && scroll > 200) {
+            header.classList.add('hide');
+         } else {
+            header.classList.remove('hide');
+         }
+         previousScroll = scroll;
+      });
+   })();
+   /* ===================================== */
+
 
    /* Header selectors */
    (function () {
