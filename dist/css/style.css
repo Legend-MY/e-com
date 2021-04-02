@@ -1463,14 +1463,20 @@ body.touch .menu__link.arrow::after {
 
 /* news ================================================================================= */
 
+.news {
+  margin: 0px 0px 50px 0px;
+}
+
 .news__title {
-  margin: 0px 0px 100px 0px;
+  margin: 0px 0px 80px 0px;
 }
 
 .news__row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   margin: 0 -30px;
 }
 
@@ -1481,16 +1487,17 @@ body.touch .menu__link.arrow::after {
   padding: 0 30px;
 }
 
-.news__item {
+.item-news {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin: 0px 0px 30px 0px;
 }
 
 .item-news__img {
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 150px;
-          flex: 0 0 150px;
+      -ms-flex: 0 0 100px;
+          flex: 0 0 100px;
   margin: 35px 20px 0px 0px;
 }
 
@@ -1512,9 +1519,10 @@ body.touch .menu__link.arrow::after {
 }
 
 .item-news__title {
-  font-weight: 600;
+  display: block;
   font-size: 22px;
   line-height: 33px;
+  font-weight: 600;
   color: #22262a;
   margin: 0px 0px 5px 0px;
 }
@@ -1524,6 +1532,107 @@ body.touch .menu__link.arrow::after {
   font-size: 18px;
   line-height: 22px;
   color: #22262a;
+}
+
+/* ============================================================================================ */
+
+/* featured products ================================================================================= */
+
+.featured-products {
+  margin: 0px 0px 50px 0px;
+}
+
+.featured-products__title {
+  margin: 0px 0px 80px 0px;
+}
+
+.featured-products__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0 -30px;
+}
+
+.featured-products__column {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 33.3333%;
+          flex: 0 0 33.3333%;
+  padding: 0 30px;
+}
+
+.item-featured {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0px 0px 30px 0px;
+}
+
+.item-featured__img {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 150px;
+          flex: 0 0 150px;
+}
+
+.item-featured__img img {
+  max-width: 100%;
+}
+
+.item-featured__body {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  margin: 0px 0px 0px 25px;
+}
+
+.item-featured__title {
+  display: inline-block;
+  font-family: "proximanova";
+  font-size: 22px;
+  line-height: 27px;
+  color: #262626;
+  margin: 0px 0px 15px 0px;
+}
+
+.item-featured__rating {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0px 0px 15px 0px;
+}
+
+.item-featured__rating svg {
+  margin: 0px 5px 0px 0px;
+}
+
+.item-featured__rating .fill path {
+  fill: #ffc600;
+}
+
+.item-featured__prices {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.item-featured__price {
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 500;
+  color: #ff4858;
+  margin: 0px 5px 0px 0px;
+}
+
+.item-featured__oldprice {
+  font-family: "proximanova";
+  font-size: 20px;
+  line-height: 24px;
+  color: #c1c8ce;
+  text-decoration: line-through;
 }
 
 /* ============================================================================================ */
@@ -1763,6 +1872,10 @@ body.touch .menu__link.arrow::after {
   .banner-little__link:hover::after {
     background-color: #262626;
   }
+
+  .item-featured__title:hover {
+    text-decoration: underline;
+  }
 }
 
 @media (max-width: 1282px) {
@@ -1798,6 +1911,12 @@ body.touch .menu__link.arrow::after {
 
   .banner-little__img {
     margin: -150px 0px 0px 0px;
+  }
+
+  .featured-products__column {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
   }
 }
 
@@ -2009,6 +2128,24 @@ body.touch .menu__link.arrow::after {
         -ms-flex: 0 0 50%;
             flex: 0 0 50%;
   }
+
+  .news__title {
+    margin: 0px 0px 40px 0px;
+  }
+
+  .news__column {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 50%;
+            flex: 0 1 50%;
+  }
+
+  .featured-products {
+    margin: 0;
+  }
+
+  .featured-products__title {
+    margin: 0px 0px 40px 0px;
+  }
 }
 
 @media (max-width: 767.98px) {
@@ -2017,45 +2154,6 @@ body.touch .menu__link.arrow::after {
     padding: 0 10px;
   }
 
-  .menu__body {
-    padding: 140px 10px 30px 10px;
-  }
-
-  .main-slider__slide {
-    height: 300px;
-  }
-
-  .banner-little__title {
-    font-size: 35px;
-  }
-
-  .banner-little__text {
-    font-size: 16px;
-    line-height: 21px;
-  }
-
-  .banner-little__img {
-    display: none;
-  }
-
-  .services__title {
-    margin: 10px 0px 10px 0px;
-  }
-}
-
-@media (max-width: 640px) {
-  .best-seller__tab {
-    margin: 0px 15px 0px 0px;
-  }
-
-  .best-seller__column {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 100%;
-            flex: 0 0 100%;
-  }
-}
-
-@media (max-width: 479.98px) {
   .header__top-profile {
     width: 25px;
     height: 25px;
@@ -2096,6 +2194,69 @@ body.touch .menu__link.arrow::after {
     height: 25px;
   }
 
+  .menu__body {
+    padding: 140px 10px 30px 10px;
+  }
+
+  .main-slider__slide {
+    height: 300px;
+  }
+
+  .banner-little__title {
+    font-size: 35px;
+  }
+
+  .banner-little__text {
+    font-size: 16px;
+    line-height: 21px;
+  }
+
+  .banner-little__img {
+    display: none;
+  }
+
+  .services__title {
+    margin: 10px 0px 10px 0px;
+  }
+
+  .news__title {
+    margin: 0px 0px 20px 0px;
+  }
+
+  .news__column {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 100%;
+            flex: 0 1 100%;
+  }
+
+  .item-news__img {
+    margin: 15px 20px 0px 0px;
+  }
+
+  .featured-products__title {
+    margin: 0px 0px 20px 0px;
+  }
+
+  .featured-products__column {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .best-seller__tab {
+    margin: 0px 15px 0px 0px;
+  }
+
+  .best-seller__column {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+  }
+}
+
+@media (max-width: 479.98px) {
   .banner-little__title {
     font-size: 19px;
     margin: 0px 0px 10px 0px;

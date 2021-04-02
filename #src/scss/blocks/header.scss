@@ -82,7 +82,7 @@
             }
          }
       }
-      @media (max-width: $md4 + px) {
+      @media (max-width: $md3 + px) {
          width: 25px;
          height: 25px;
          margin: 0px 20px 0px 0px;
@@ -136,7 +136,7 @@
             }
          }
       }
-      @media (max-width: $md4 + px) {
+      @media (max-width: $md3 + px) {
          width: 25px;
          height: 25px;
          margin: 0px 20px 0px 0px;
@@ -155,7 +155,7 @@
       margin: 0px 35px 0px 0px;
       position: relative;
       z-index: 5;
-      @media (max-width: $md4 + px) {
+      @media (max-width: $md3 + px) {
          display: none;
       }
    }
@@ -181,7 +181,7 @@
             }
          }
       }
-      @media (max-width: $md4 + px) {
+      @media (max-width: $md3 + px) {
          width: 25px;
          height: 25px;
          svg {
