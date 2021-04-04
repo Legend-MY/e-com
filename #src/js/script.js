@@ -20,7 +20,6 @@ document.addEventListener('DOMContentLoaded', function () {
       let previousScroll = 0;
       window.addEventListener('scroll', function (event) {
          let scroll = window.pageYOffset;
-         console.log(scroll);
          if (scroll > previousScroll && scroll > 200) {
             header.classList.add('hide');
          } else {
@@ -126,7 +125,48 @@ document.addEventListener('DOMContentLoaded', function () {
          }
       });
    })();
-
    /* ===================================== */
+
+   /* Slidetoggle в футере */
+   (function () {
+      const mediaQuery = window.matchMedia('(max-width: 640px)');
+      if (mediaQuery.matches) {
+         let footerToggler = document.getElementById('footer-toggler');
+         footerToggler.addEventListener('click', change);
+
+         function change(event) {
+            let target = event.target;
+            if (!target.classList.contains('item-footer__title')) {
+               return;
+            }
+
+            if (target.classList.contains('show')) {
+               hideAll();
+            } else {
+               hideAll();
+               target.classList.add('show');
+               showText(target.nextElementSibling);
+            }
+         }
+
+         function hideAll() {
+            var titleEl = footerToggler.querySelectorAll('.item-footer__title');
+            let bodyEl = footerToggler.querySelectorAll('.item-footer__body');
+            for (let i = 0; i < titleEl.length; i++) {
+               titleEl[i].classList.remove('show');
+            }
+            for (let i = 0; i < bodyEl.length; i++) {
+               bodyEl[i].style.height = '0';
+            }
+         }
+
+         function showText(textEl) {
+            textEl.style.height = textEl.scrollHeight + 'px';
+         }
+      }
+   })();
+   /* ===================================== */
+
+
 });
 
