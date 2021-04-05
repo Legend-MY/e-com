@@ -7,7 +7,7 @@
    padding: 26px 0;
    background-color: #fff;
    z-index: 10;
-   transition: all 0.5s ease 0s;
+   transition: top 0.5s ease 0s;
    &.hide {
       top: -120%;
       .menu__body {

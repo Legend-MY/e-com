@@ -312,7 +312,7 @@ testWebP(function (support) {
 
    /* Slidetoggle в футере */
    (function () {
-      const mediaQuery = window.matchMedia('(max-width: 640px)');
+      const mediaQuery = window.matchMedia('(max-width: 768px)');
       if (mediaQuery.matches) {
          let footerToggler = document.getElementById('footer-toggler');
          footerToggler.addEventListener('click', change);

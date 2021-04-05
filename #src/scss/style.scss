@@ -129,7 +129,7 @@ body {
             }
          }
       }
-      @media (max-width: 640px) {
+      @media (max-width: $md3 + px) {
          .item-footer__title {
             &.arrow {
                display: flex;
@@ -375,7 +375,7 @@ body {
       display: flex;
       justify-content: center;
       align-items: center;
-      margin: 0px 0px 10px 0px;
+      margin: 0px 0px 5px 0px;
       padding: 0px 12px;
    }
 
