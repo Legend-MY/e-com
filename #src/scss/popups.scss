@@ -21,13 +21,13 @@
    }
 
    // .popup__area
-   // &__area {
-   //    position: absolute;
-   //    top: 0;
-   //    left: 0;
-   //    width: 100%;
-   //    height: 100%;
-   // }
+   &__area {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+   }
 
    // .popup__body
    &__body {
@@ -52,8 +52,8 @@
    // .popup__close
    &__close {
       display: block;
-      width: 20px;
-      height: 20px;
+      width: 15px;
+      height: 15px;
       position: absolute;
       top: 10px;
       right: 10px;
@@ -78,6 +78,7 @@
       // .search-popup__input
       &__input {
          width: 100%;
+         padding: 0px 0px 0px 10px;
          @include adaptive-font(18, 12);
          border-bottom: 2px solid $main-black;
          &::placeholder {
@@ -95,8 +96,7 @@
          cursor: pointer;
          position: absolute;
          right: 0;
-         top: 50%;
-         transform: translateY(-50%);
+         bottom: 5px;
       }
    }
 }
