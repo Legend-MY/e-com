@@ -1,0 +1,18 @@
+.page {
+   padding: 205px 0px 0px 0px;
+   // .page__container
+   &__container {
+      display: flex;
+   }
+
+   // .page__filter
+   &__filter {
+      flex: 0 0 270px;
+   }
+
+   // .page__content
+   &__content {
+      flex: 1 1 auto;
+      padding: 0px 0px 0px 30px;
+   }
+}
