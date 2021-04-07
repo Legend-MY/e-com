@@ -1,5 +1,6 @@
 .page {
    padding: 205px 0px 0px 0px;
+   margin: 0px 0px 155px 0px;
    // .page__container
    &__container {
       display: flex;
@@ -14,5 +15,82 @@
    &__content {
       flex: 1 1 auto;
       padding: 0px 0px 0px 30px;
+   }
+}
+
+.filter {
+   // .filter__title
+   &__title {
+   }
+
+   // .filter__body
+   &__body {
+   }
+
+   // .filter__section
+   &__section {
+   }
+}
+
+.section-filter {
+   background-color: #f6f7f8;
+   border-radius: 5px;
+   padding: 20px;
+   margin: 0px 0px 30px 0px;
+   // .section-filter__title
+   &__title {
+      font-size: 18px;
+      line-height: 27px;
+      font-weight: 500;
+   }
+
+   // .section-filter__body
+   &__body {
+      padding: 25px 0px 0px 0px;
+   }
+
+   // .section-filter__checkbox
+   &__checkbox {
+      display: flex;
+      align-items: center;
+      margin: 0px 0px 20px 0px;
+      &:last-child {
+         margin: 0px 0px 0px 0px;
+      }
+   }
+}
+
+.checkbox {
+   position: relative;
+   // .checkbox__input
+   &__input {
+      position: absolute;
+      width: 0;
+      height: 0;
+      opacity: 0;
+      visibility: hidden;
+      &:checked ~ span {
+         color: $main-blue;
+      }
+   }
+
+   // .checkbox__text
+   &__text {
+      display: inline-flex;
+      align-items: center;
+      position: relative;
+      font-family: "proximanova";
+      font-size: 18px;
+      line-height: 22px;
+      cursor: pointer;
+   }
+
+   // .checkbox__count
+   &__count {
+      font-family: "proximanova";
+      font-size: 18px;
+      line-height: 22px;
+      margin-left: auto;
+      color: rgba($color: $main-black, $alpha: 0.35);
    }
 }
