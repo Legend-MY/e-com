@@ -13,6 +13,9 @@ document.addEventListener('DOMContentLoaded', function () {
    /* Подключение popups */
    @@include('popups.js');
    /* ===================================== */
+   /* range slider (noUiSlider) */
+   @@include('nouislider.min.js');
+   /* ===================================== */
 
    /* Скрыть header при скролле */
    (function () {
@@ -20,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
       let previousScroll = 0;
       window.addEventListener('scroll', function (event) {
          let scroll = window.pageYOffset;
-         if (scroll > previousScroll && scroll > 200) {
+         if (scroll > previousScroll && scroll > 150) {
             header.classList.add('hide');
          } else {
             header.classList.remove('hide');
@@ -105,25 +108,27 @@ document.addEventListener('DOMContentLoaded', function () {
          filterTab = document.querySelectorAll('.best-seller__tab'),
          filterCards = document.querySelectorAll('.best-seller__column');
 
-      filterTabs.addEventListener('click', (event) => {
-         const target = event.target;
-         if (!target.classList.contains('best-seller__tab')) {
-            return false;
-         } else {
-            let filterClass = target.dataset['category'];
-            filterCards.forEach((elem) => {
-               elem.classList.remove('hide');
-               if (!elem.classList.contains(filterClass) && filterClass !== 'All') {
-                  elem.classList.add('hide');
-               }
-            });
+      if (filterTabs) {
+         filterTabs.addEventListener('click', (event) => {
+            const target = event.target;
+            if (!target.classList.contains('best-seller__tab')) {
+               return false;
+            } else {
+               let filterClass = target.dataset['category'];
+               filterCards.forEach((elem) => {
+                  elem.classList.remove('hide');
+                  if (!elem.classList.contains(filterClass) && filterClass !== 'All') {
+                     elem.classList.add('hide');
+                  }
+               });
 
-            filterTab.forEach((elem) => {
-               elem.classList.remove('active');
-               target.classList.add('active');
-            });
-         }
-      });
+               filterTab.forEach((elem) => {
+                  elem.classList.remove('active');
+                  target.classList.add('active');
+               });
+            }
+         });
+      }
    })();
    /* ===================================== */
 
@@ -167,6 +172,52 @@ document.addEventListener('DOMContentLoaded', function () {
    })();
    /* ===================================== */
 
+   /* Range Slider для фильтра цены */
+   (function () {
+      const priceSlider = document.querySelector('.price-filter__slider');
+
+      if (priceSlider) {
+         noUiSlider.create(priceSlider, {
+            start: [4, 80],
+            connect: true,
+            range: {
+               'min': [0],
+               'max': [25.99]
+            }
+         });
+         const paddingMin = document.querySelector('.price-min');
+         const paddingMax = document.querySelector('.price-max');
+
+         priceSlider.noUiSlider.on('update', function (values, handle) {
+            if (handle) {
+               paddingMax.innerHTML = values[handle];
+            } else {
+               paddingMin.innerHTML = values[handle];
+            }
+         });
+      }
+   })();
+   /* ===================================== */
+
+   /* Получить высоту элементов для блока фильтров */
+   (function () {
+      const filterBody = document.querySelector('.filter__body');
+      const filterBlocks = document.querySelectorAll('.filter__section');
+      const filterBtn = document.querySelector('.filter__btn');
+      let visibleFiltersHeight = filterBlocks[0].offsetHeight + filterBlocks[1].offsetHeight + filterBlocks[2].offsetHeight + filterBlocks[3].offsetHeight;
+      let visibleFiltersMargin = parseInt(getComputedStyle(filterBlocks[0]).marginBottom) + parseInt(getComputedStyle(filterBlocks[1]).marginBottom) + parseInt(getComputedStyle(filterBlocks[2]).marginBottom) + parseInt(getComputedStyle(filterBlocks[3]).marginBottom);
+
+      if (filterBody) {
+         filterBody.style.height = visibleFiltersHeight + visibleFiltersMargin + 'px';
+
+         filterBtn.addEventListener('click', function (event) {
+            event.preventDefault();
+            filterBody.style.height = filterBody.scrollHeight + 'px';
+         });
+      }
+
+   })();
+   /* ===================================== */
 
 });
 
