@@ -394,9 +394,14 @@ testWebP(function (support) {
       if (filterBody) {
          filterBody.style.height = visibleFiltersHeight + visibleFiltersMargin + 'px';
 
+         if (parseInt(filterBody.style.height) == filterBody.scrollHeight) {
+            filterBtn.style.display = 'none';
+         }
+
          filterBtn.addEventListener('click', function (event) {
             event.preventDefault();
             filterBody.style.height = filterBody.scrollHeight + 'px';
+            filterBtn.style.transform = 'scale(0)';
          });
       }
 
