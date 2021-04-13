@@ -16,6 +16,9 @@ document.addEventListener('DOMContentLoaded', function () {
    /* range slider (noUiSlider) */
    @@include('nouislider.min.js');
    /* ===================================== */
+   /* range slideToggleJs */
+   @@include('slideToggleJs.js');
+   /* ===================================== */
 
    /* Скрыть header при скролле */
    (function () {
@@ -221,6 +224,17 @@ document.addEventListener('DOMContentLoaded', function () {
          });
       }
 
+   })();
+   /* ===================================== */
+
+   /* Свернуть блок с фильтрами SlideToggle */
+   (function () {
+      const filterTitle = document.querySelector('.filter__title'),
+         filterWrapper = document.querySelector('.filter__wrapper');
+
+      filterTitle.addEventListener('click', function () {
+         _slideToggle(filterWrapper);
+      });
    })();
    /* ===================================== */
 
