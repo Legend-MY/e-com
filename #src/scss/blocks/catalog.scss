@@ -131,7 +131,7 @@
       width: 0;
       height: 0;
       opacity: 0;
-      visibility: hidden;
+      // visibility: hidden;
       &:checked ~ span {
          color: $main-blue;
       }
@@ -243,7 +243,7 @@
       width: 0;
       height: 0;
       opacity: 0;
-      visibility: hidden;
+      // visibility: hidden;
       &:checked + .filter-color__value {
          &::before {
             display: block;
@@ -278,6 +278,7 @@
    background-color: $main-blue;
    color: #fff;
    padding: 55px 0;
+   margin: 0px 0px 40px 0px;
    @media (max-width: $md2 +px) {
       padding: 30px 0;
    }
@@ -359,5 +360,112 @@
       @media (max-width: $md2 +px) {
          display: none;
       }
+   }
+}
+
+/* Секция с сортировкой и продуктами*/
+.catalog {
+   // .catalog__actions
+   &__actions {
+   }
+}
+
+.actions-catalog {
+   background-color: #f6f7f8;
+   font-family: "proximanova";
+   font-size: 16px;
+   line-height: 19px;
+   color: $main-black;
+   border-radius: 5px;
+   padding: 20px;
+   display: flex;
+   align-items: center;
+   // .actions-catalog__count
+   &__count {
+   }
+
+   // .actions-catalog__order
+   &__order {
+   }
+}
+
+.order-catalog {
+   display: flex;
+   // .order-catalog__select
+   &__select {
+      display: flex;
+      align-items: center;
+      margin: 0px 0px 0px 45px;
+   }
+
+   // .order-catalog__label
+   &__label {
+      margin: 0px 12px 0px 0px;
+   }
+
+   // .order-catalog__btn
+   &__btn {
+      display: inline-block;
+      min-width: 130px;
+      border: 2px solid #f1f3f4;
+      border-radius: 5%;
+      cursor: pointer;
+      padding: 10px 25px 10px 10px;
+      position: relative;
+      &::after {
+         content: "";
+         width: 0;
+         height: 0;
+         border-style: solid;
+         border-width: 4px 3.5px 0 3.5px;
+         border-color: $main-black transparent transparent transparent;
+         position: absolute;
+         right: 10px;
+         top: 50%;
+         transform: translateY(-50%);
+      }
+      &:focus,
+      &.is-active {
+         box-shadow: 0px 0px 0px 2px rgba(176, 198, 225, 0.6);
+      }
+   }
+
+   // .order-catalog__dropdown
+   &__dropdown {
+      position: relative;
+   }
+
+   // .order-catalog__dropdown-list
+   &__dropdown-list {
+      display: none;
+      position: absolute;
+      left: 0;
+      top: 100%;
+      overflow: hidden;
+      background-color: #fff;
+      min-width: 100%;
+      border: 2px solid #f1f3f4;
+      border-top: none;
+      &.is-active {
+         display: block;
+      }
+   }
+
+   // .order-catalog__dropdown-item
+   &__dropdown-item {
+      padding: 10px;
+      cursor: pointer;
+      background-color: #fff;
+      transition: background-color 0.3s ease 0s;
+      @media (min-width: $md2 + px) {
+         &:hover {
+            background-color: #f6f7f8;
+         }
+      }
+   }
+
+   // .order-catalog__dropdown-input
+   &__dropdown-input {
+      display: none;
    }
 }

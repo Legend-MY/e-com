@@ -40,7 +40,7 @@ let _slideDown = (target, duration = 500) => {
    target.offsetHeight;
    target.style.transitionProperty = 'height, margin, padding';
    target.style.transitionDuration = duration + 'ms';
-   target.style.height = target.offsetHeight + 'px';
+   target.style.height = height + 'px';
    target.style.removeProperty('padding-top');
    target.style.removeProperty('padding-bottom');
    target.style.removeProperty('margin-top');

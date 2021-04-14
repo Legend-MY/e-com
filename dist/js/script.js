@@ -243,7 +243,7 @@ let _slideDown = (target, duration = 500) => {
    target.offsetHeight;
    target.style.transitionProperty = 'height, margin, padding';
    target.style.transitionDuration = duration + 'ms';
-   target.style.height = target.offsetHeight + 'px';
+   target.style.height = height + 'px';
    target.style.removeProperty('padding-top');
    target.style.removeProperty('padding-bottom');
    target.style.removeProperty('margin-top');
@@ -478,12 +478,63 @@ let _slideToggle = (target, duration = 500) => {
 
    /* Свернуть блок с фильтрами SlideToggle */
    (function () {
-      const filterTitle = document.querySelector('.filter__title'),
-         filterWrapper = document.querySelector('.filter__wrapper');
+      const mediaQuery = window.matchMedia('(max-width: 991px)');
+      if (mediaQuery.matches) {
+         const filterTitle = document.querySelector('.filter__title'),
+            filterWrapper = document.querySelector('.filter__wrapper');
 
-      filterTitle.addEventListener('click', function () {
-         _slideToggle(filterWrapper);
+         _slideUp(filterWrapper, 0);
+
+         filterTitle.addEventListener('click', function () {
+            _slideToggle(filterWrapper);
+         });
+      }
+
+   })();
+   /* ===================================== */
+
+   /* Dropdown с сортировкой */
+   (function () {
+      document.querySelectorAll('.order-catalog__dropdown').forEach(function (dropDownWrapper) {
+         const dropDownBtn = dropDownWrapper.querySelector('.order-catalog__btn'),
+            dropDownList = dropDownWrapper.querySelector('.order-catalog__dropdown-list'),
+            dropDownListItems = dropDownWrapper.querySelectorAll('.order-catalog__dropdown-item'),
+            dropDownInput = dropDownWrapper.querySelector('.order-catalog__dropdown-input');
+
+         // Клик по кнопке открыть/закрыть select
+         dropDownBtn.addEventListener('click', function () {
+            dropDownList.classList.toggle('is-active');
+            this.classList.add('is-active');
+         });
+
+         // Выбор элемента списка. Запомнить выбранное значение. Закрыть дропдаун
+         dropDownListItems.forEach(function (listItem) {
+            listItem.addEventListener('click', function (e) {
+               e.stopPropagation();
+               dropDownBtn.innerText = this.innerText;
+               dropDownBtn.focus();
+               dropDownInput.value = this.dataset.value;
+               dropDownList.classList.remove('is-active');
+            });
+         });
+
+         // клик снаружи дропдауна. Закрыть дропдаун
+         document.addEventListener('click', function (event) {
+            let target = event.target;
+            if (!target.classList.contains('order-catalog__btn')) {
+               dropDownBtn.classList.remove('is-active');
+               dropDownList.classList.remove('is-active');
+            }
+         });
+
+         document.addEventListener('keydown', function (event) {
+            if (event.key === 'Tab' || event.key === 'Escape') {
+               dropDownBtn.classList.remove('is-active');
+               dropDownList.classList.remove('is-active');
+            }
+         });
       });
+
    })();
    /* ===================================== */
 
