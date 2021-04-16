@@ -471,6 +471,7 @@ body.touch .menu__link.arrow::after {
       -ms-flex: 0 0 33.333%;
           flex: 0 0 33.333%;
   padding: 0 17px;
+  margin: 0px 0px 35px 0px;
 }
 
 .items-products.line-view .items-products__column {
@@ -1593,7 +1594,6 @@ body.touch .menu__link.arrow::after {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 25%;
           flex: 0 0 25%;
-  margin: 0px 0px 35px 0px;
 }
 
 .best-seller__link {
@@ -2356,14 +2356,19 @@ body.touch .menu__link.arrow::after {
 
 /* Секция с сортировкой и продуктами*/
 
+.catalog__actions {
+  margin: 0px 0px 25px 0px;
+}
+
 .actions-catalog {
+  height: 58px;
   background-color: #f6f7f8;
   font-family: "proximanova";
   font-size: 16px;
   line-height: 19px;
   color: #262626;
   border-radius: 5px;
-  padding: 20px;
+  padding: 0px 0px 0px 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2376,6 +2381,9 @@ body.touch .menu__link.arrow::after {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
 }
 
 .order-catalog__select {
@@ -2398,7 +2406,7 @@ body.touch .menu__link.arrow::after {
   border: 2px solid #f1f3f4;
   border-radius: 5%;
   cursor: pointer;
-  padding: 10px 25px 10px 10px;
+  padding: 5px 25px 5px 10px;
   position: relative;
 }
 
@@ -2431,12 +2439,13 @@ body.touch .menu__link.arrow::after {
   display: none;
   position: absolute;
   left: 0;
-  top: 100%;
-  overflow: hidden;
+  top: 105%;
   background-color: #fff;
   min-width: 100%;
   border: 2px solid #f1f3f4;
   border-top: none;
+  max-height: 150px;
+  overflow-y: auto;
 }
 
 .order-catalog__dropdown-list.is-active {
@@ -2454,6 +2463,35 @@ body.touch .menu__link.arrow::after {
 
 .order-catalog__dropdown-input {
   display: none;
+}
+
+.view-catalog {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+}
+
+.view-catalog__item {
+  width: 55px;
+  background-color: #f6f7f8;
+  cursor: pointer;
+}
+
+.view-catalog__item_grid {
+  background: url("../img/grid-view.svg") no-repeat center/22px 20px;
+}
+
+.view-catalog__item_grid.active {
+  background: url("../img/grid-view-active.svg") no-repeat center/22px 20px;
+}
+
+.view-catalog__item_list {
+  background: url("../img/line-view.svg") no-repeat center/20px 16px;
+}
+
+.view-catalog__item_list.active {
+  background: url("../img/line-view-active.svg") no-repeat center/20px 16px;
 }
 
 @media (min-width: 991.98px) {

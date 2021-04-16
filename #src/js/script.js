@@ -244,7 +244,7 @@ document.addEventListener('DOMContentLoaded', function () {
    })();
    /* ===================================== */
 
-   /* Dropdown с сортировкой */
+   /* Dropdown с сортировкой на странице продуктов*/
    (function () {
       document.querySelectorAll('.order-catalog__dropdown').forEach(function (dropDownWrapper) {
          const dropDownBtn = dropDownWrapper.querySelector('.order-catalog__btn'),
@@ -289,5 +289,26 @@ document.addEventListener('DOMContentLoaded', function () {
    })();
    /* ===================================== */
 
+   /* Dropdown с сортировкой на странице продуктов*/
+   (function () {
+      let viewCatalogItems = document.querySelectorAll('.view-catalog__item'),
+         catalogProductsRow = document.querySelectorAll('.catalog__products__row');
+
+      function removeActiveclass() {
+         viewCatalogItems.forEach(function (item) {
+            item.classList.remove('active');
+         });
+      }
+
+      viewCatalogItems.forEach(function (item) {
+         item.addEventListener('click', function (event) {
+            let target = event.target;
+
+            removeActiveclass();
+            this.classList.add('active');
+         });
+      });
+   })();
+   /* ===================================== */
 });
 

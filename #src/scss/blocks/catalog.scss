@@ -367,17 +367,19 @@
 .catalog {
    // .catalog__actions
    &__actions {
+      margin: 0px 0px 25px 0px;
    }
 }
 
 .actions-catalog {
+   height: 58px;
    background-color: #f6f7f8;
    font-family: "proximanova";
    font-size: 16px;
    line-height: 19px;
    color: $main-black;
    border-radius: 5px;
-   padding: 20px;
+   padding: 0px 0px 0px 20px;
    display: flex;
    align-items: center;
    // .actions-catalog__count
@@ -387,10 +389,15 @@
    // .actions-catalog__order
    &__order {
    }
+
+   // .actions-catalog__view
+   &__view {
+   }
 }
 
 .order-catalog {
    display: flex;
+   flex: 1 1 auto;
    // .order-catalog__select
    &__select {
       display: flex;
@@ -410,7 +417,7 @@
       border: 2px solid #f1f3f4;
       border-radius: 5%;
       cursor: pointer;
-      padding: 10px 25px 10px 10px;
+      padding: 5px 25px 5px 10px;
       position: relative;
       &::after {
          content: "";
@@ -440,12 +447,13 @@
       display: none;
       position: absolute;
       left: 0;
-      top: 100%;
-      overflow: hidden;
+      top: 105%;
       background-color: #fff;
       min-width: 100%;
       border: 2px solid #f1f3f4;
       border-top: none;
+      max-height: 150px;
+      overflow-y: auto;
       &.is-active {
          display: block;
       }
@@ -467,5 +475,32 @@
    // .order-catalog__dropdown-input
    &__dropdown-input {
       display: none;
+   }
+}
+
+.view-catalog {
+   display: flex;
+   height: 100%;
+
+   // .view-catalog__item
+   &__item {
+      width: 55px;
+      background-color: #f6f7f8;
+      cursor: pointer;
+      // .view-catalog__item_grid
+      &_grid {
+         background: url("../img/grid-view.svg") no-repeat center / 22px 20px;
+         &.active {
+            background: url("../img/grid-view-active.svg") no-repeat center / 22px 20px;
+         }
+      }
+
+      // .view-catalog__item_list
+      &_list {
+         background: url("../img/line-view.svg") no-repeat center / 20px 16px;
+         &.active {
+            background: url("../img/line-view-active.svg") no-repeat center / 20px 16px;
+         }
+      }
    }
 }
