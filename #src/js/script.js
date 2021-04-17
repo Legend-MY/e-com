@@ -289,7 +289,7 @@ document.addEventListener('DOMContentLoaded', function () {
    })();
    /* ===================================== */
 
-   /* Dropdown с сортировкой на странице продуктов*/
+   /* Отображение продуктв сеткой или списком */
    (function () {
       let viewCatalogItems = document.querySelectorAll('.view-catalog__item'),
          catalogProductsRow = document.querySelectorAll('.catalog__products__row');
@@ -303,11 +303,44 @@ document.addEventListener('DOMContentLoaded', function () {
       viewCatalogItems.forEach(function (item) {
          item.addEventListener('click', function (event) {
             let target = event.target;
+            console.log(target);
 
             removeActiveclass();
             this.classList.add('active');
+
+            if (target.classList.contains('view-catalog__item_list')) {
+               catalogProductsRow.forEach(function (item) {
+                  item.classList.add('line-view');
+               });
+            } else {
+               catalogProductsRow.forEach(function (item) {
+                  item.classList.remove('line-view');
+               });
+            }
          });
       });
+   })();
+   /* ===================================== */
+
+   /* Пагинация*/
+   (function () {
+
+      let paggingLink = document.querySelectorAll('.pagging__link');
+
+      function removeActiveclass() {
+         paggingLink.forEach(function (item) {
+            item.classList.remove('active');
+         });
+      }
+
+      paggingLink.forEach(function (item) {
+         item.addEventListener('click', function (event) {
+            event.preventDefault();
+            removeActiveclass();
+            item.classList.add('active');
+         });
+      });
+
    })();
    /* ===================================== */
 });
